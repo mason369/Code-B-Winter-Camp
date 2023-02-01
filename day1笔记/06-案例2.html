@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * == 和 === 都是用来判断左右两侧的值是否相等的
+         * 不同点在于：== 会进行隐式转换 ，但是===不会进行隐式转换
+        */
+       var a = 3,
+           b = '3',
+           c = 3;
+        
+        console.log(a == b);  // true
+        console.log(a === c); // true   
+        console.log(a === b); // false
+
+        // NaN 与 包括自己在内的任何内容都不相等
+        console.log(NaN == NaN); //true
+        console.log(NaN === NaN);//true
+
+        // 如何判断一个值是否非数字呢??
+        var isNumber = 'sadf';
+        //isNaN用于判断一个值是否为非数字
+        console.log(isNaN(isNumber));// true
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 总结一下，有哪些值，用布尔值来表示的时候，返回值是false?
+         * undefined,null,0,'',false,NaN
+         * 
+         * 逻辑 与  &&
+         * 1.当执行&&运算时，遇到真就往后执行，遇到假或走到最后就返回当前的值
+         * 2.相当于遇到假的值就直接返回当前值
+         * 
+         * 逻辑 或 运算 ||
+         * 1.当执行||运算时，遇到假的就往后执行，遇到真或者走到最后就返回当前的值
+         * 2.相当于遇到真的就返回当前值
+        */
+
+        // var a = 1,
+        //     b = 0,
+        //     c = 2;
+        
+        // console.log(a && b);//0
+        // console.log(a && c);//2  
+        // console.log(b && c);//0
+        // console.log(b && a);//0
+
+        // var a = 1,
+        //     b = 2,
+        //     c = '',
+        //     d = undefined;
+         
+        // console.log(b || a);//2
+        // console.log(c || d);//undefined 
+
+
+        // ! 取返  !=  !== 
+        var a = 1;
+        var b = undefined;
+        var c = NaN;
+
+        console.log(!a);//false
+        console.log(!b);//true
+        console.log(!c);//true
+
+        a = !a ; // 非a赋值给a
+        a != a ; // 判断，a不等于a
+
+        var b = '3' ;
+        console.log(b != 3);//false
+        console.log(b !== 3);//true
+    </script>
+</body>
+</html>

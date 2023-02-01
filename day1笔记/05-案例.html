@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 交换变量
+         * 现在有变量a = 2 , b = 3 ;
+         * 
+         * 1. 创建新的变量作为中转变量
+         * 2. 通过运算来处理
+        */
+
+        // var a = 2 ,
+        //     b = 3 ,
+        //     temp ;
+
+        // temp = a ; // 将a的值赋给temp变量  a=>空的  temp=>2
+        // a = b ; //将b的值赋给a变量  a=>3  b=>空的
+        // b = temp; // temp清空，b的值为2
+
+        // var a = 2 ,
+        //     b = 3 ;
+
+        // a = a + b ; // a = 5
+        // b = a - b ; // 5 -3 = 2;
+        // a = a - b ; // 5 -2 = 3;
+
+        /**
+         * ++a  a++
+         * 
+        */
+        // var a = 10 ;
+        // a++; // a = a + 1;
+        // ++a; // a = a + 1;
+        // console.log(a);    
+
+        // var a = 10 ;
+        // console.log(a++);
+        // // console.log(++a);
+
+        // 比较运算符 : 结果只有一种 boolean  => true false
+        var a = 1,
+            b = '2';
+
+        console.log(a > b);  // false
+        console.log(b > a);  // true  
+
+
+        var c = 2,
+            d = 'str'; // NaN
+
+        console.log(c > d);// false  true uni  
+
+        var e = '89',
+            f = true;
+        
+        console.log(e > f); // 89 > 1 = true    
+
+
+        // 两个都是字符串比较的情况，就得比较ASCII码表上的值
+        var aa = 'a',
+            bb = 'b';
+        console.log(aa > bb); // false 
+
+        var cc = '11',
+            dd = '2';
+        console.log(cc > dd); // false
+
+
+        
+
+
+    </script>
+</body>
+</html>

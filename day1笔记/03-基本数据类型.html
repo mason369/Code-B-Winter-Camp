@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 一、变量
+         * **/
+        // 声明变量
+        var a ; // 我要获取一个空间，并且这个空间名字是a
+        // 变量赋值
+        a = 1 ; // 将 1 赋值 给 a
+        a = 2 ; // 2  变量可以修改的
+        a = true ; // true  2  3  
+        console.log(a);
+
+        // 声明变量并赋值
+        var b = 3;
+        console.log(b);
+
+
+        // 如果同时声明 c,d,e变量 ？
+        // 当只声明了变量，但是没有赋值的时候，js会默认给这些变量赋值为undefined
+        var c ;
+        var d ;
+        var e ;
+        console.log(c,d,e);
+
+        var c ,
+            d ,
+            e ;
+
+        /**
+         * 变量声明的规则:
+         * 1. 不能以 数字开头
+         * 2. 可以使用_ $开头
+         * 3. 不能够包含关键字和保留字  this var 
+         * 4. 小驼峰命名
+         * 5. 要有语义化 
+        */
+
+        var $demo = 1 
+        var myName = '张三' ;
+        console.log(myName);
+
+
+        var dsjkafjds  = '123'
+
+        var myAge = 18 ;
+        var flag = true;
+        var n = null ;
+
+
+        // 优先级
+        var x = 3 ,
+            y = 4 ;
+        var z = x + y ; 
+        console.log(z);    // 7  报错   4  
+
+
+        // 练习：请你声明以下变量：名字、年龄、性别、梦想、爱好
+
+        
+
+
+    </script>
+</body>
+</html>
