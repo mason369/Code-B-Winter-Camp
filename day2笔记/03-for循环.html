@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 需求：输出500行我正在学习前端
+         * for循环的目的：重复多次执行某一些代码
+         * for(初始化变量;条件表达式;操作表达式){
+         *      循环体 => 你需要for循环帮你重复执行的逻辑就要放在这里
+         * }
+        */
+
+        // 我要打印10次hello
+        // (var i = 1 ;i <= 10 ;i++) => (声明变量并初始化，条件判断(true,false),变量增长)
+        // for(var i = 1 ;i <= 10 ;i++){
+        //     console.log('hello');
+        // }
+        /**
+         * 执行顺序：
+         * 1. var i = 1  => 只会执行一次；
+         * 2. 判断i <= 10 是否成立？如果成立，则执行循环体中的内容
+         * 3. 开始输出 hello => 第一次输出
+         * 4. 输出完毕之后，代表第一次执行结果已经完成，计数器需要自增1 
+         * 5. 增加完之后，再进行条件判断，如果成立，则循环以上逻辑
+         * 6. 当条件判断为假的时候，则跳出循环体，不再执行for循环中的内容
+         * 
+        */
+
+        
+        // for(var i = 1;i<1;i++){
+        //     console.log('ok');
+        // }
+
+        // for(var i = 0;i < 10; i++){
+        //     console.log('do something');
+        // }
+
+        // var i = 0;
+        // for(;i < 10;){
+        //     console.log('拆解');
+        //     i++;
+        // }
+
+        // 通过for循环，打印1到10之间的数
+        // for(var i = 1;i <= 10;i++){
+        //     console.log(i);
+        // }
+
+        // 通过for循环，计算1到5的累加和
+        // var sum = 0 ;
+        // for(var i = 1;i < 6; i++){
+        //     sum = sum + i ; 
+        // };
+        // console.log(sum);
+
+        // 如何终止循环？ 比如要打印1到5的数，当打印到4的时候，就不打印了
+        // for(var i = 1 ;i <=5 ;i++){
+        //     if(i == 5){
+        //         break;
+        //     }
+        //     console.log(i);
+        // }
+        /**
+         * 1. var i = 1;
+         * 2. 判断 i<=5 是否为真， 为真则进行逻辑处理
+         * 3. i++ => i=2
+         * 4. 判断2 <=5 是否为真
+         *  .......
+        */
+
+        // 打印1到10之间的数，如果能被7整除，则终止循环
+        for(var i = 1; i<= 10 ;i++){
+            if(i % 7 == 0){
+                break;
+            }
+            // console.log(i);
+        }
+
+
+        // 如何跳过本次循环？
+        for(var i = 1;i <=10 ;i++){
+            if(i % 7 == 0){
+                continue;
+            }
+            console.log(i);
+        }
+    </script>
+</body>
+</html>

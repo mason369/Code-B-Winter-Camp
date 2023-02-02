@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 数组:
+         * 什么是数组？数组就是一组数组的集合，数组中的每一个成员叫做元素
+         * 在数组中可以放任何类型的数据
+         * 如果需要将多个数据存放在一起，就可以使用数组
+         * 数组 => []
+        */
+    //    var myName = '王艺飞',
+    //        myAge  = 21,
+    //        gender = 'male';
+
+    //    var personInfo = ['王艺飞',21,'male'];
+    //    console.log(personInfo);
+
+       // 声明一个数组，在里面放你的各种信息，姓名，年龄，性别，梦想，爱好
+       // 如果我想要访问personInfo中的年龄21，怎么访问？
+       // 数组的下标 从0开始 ，可以通过数组名[下标]访问对应的成员
+    //    console.log(personInfo[0]);
+    //    console.log(personInfo[1]);
+    //    console.log(personInfo[2]);
+
+    //    var colors = ['red','blue','white','green','orange'];
+    //    console.log(colors);
+
+    //    // 使用数组名.length可以获取数组成员个数
+    //    console.log(colors.length);
+
+    //    var hobbies = ['打游戏','吃饭','唱歌','健身'];
+    //    console.log(hobbies[2]);
+
+    //    var cai = ['炒肉','干锅','麻辣烫','烧烤'];
+    //    console.log(cai[3]);
+
+       // 需求：遍历数组 遍历==访问每一个成员 
+       var colors = ['red','blue','white','green','orange'];
+       for(var i = 0;i < colors.length;i++){
+          console.log(colors[i]);
+       }
+
+
+       var personInfo = [18,'小王','male',undefined,null,false];
+
+       // 需求：将18改为21
+       personInfo[0] = 21;
+
+       // 证明：数组中的成员信息是可变更的，且数组中可以存放任意类型的数据
+       console.log(personInfo);
+
+       // 求和，求平均值  sum  average
+       var arr = [ 1, 3, 5, 7, 9 ];
+       var sum = 0 ,
+           average ;
+       for(var i = 0;i < arr.length;i++){
+          sum += arr[i]
+       }
+
+       average = sum / arr.length; 
+       console.log(sum, average);
+    </script>
+</body>
+</html>

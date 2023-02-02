@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var colors = ['red','blue','orange','purple'];
+        // 需求：将orange改为green
+        colors[2] = 'green';
+        // console.log(colors);
+
+        // 在colors中新增一个pink颜色 
+        // => 直接通过下标的形式添加数组成员
+        colors[4] = 'pink';
+        // console.log(colors);
+
+        // push方法往数组身上添加成员 => 在末尾添加
+        colors.push('white');
+        // console.log(colors);
+        colors.push('black','gray');
+        // console.log(colors);
+
+        // 在colors中头部添加一个yellow颜色 unshift => 头部添加
+        colors.unshift('yellow');
+        console.log(colors);
+
+        // 练习：新建一个数组，往里面添加你的姓名，使用push方法和unshift方法分别
+        // 将你的其他信息放到此数组中
+
+
+        // 需求：将头部的yellow删除掉
+        // shift方法 可以从数组的首位删除一个成员，没有参数
+        colors.shift();
+        console.log(colors);
+
+        // 需求：将末尾成员删除
+        // pop方法 可以从数组的末尾删除一个成员，没有参数
+        colors.pop();
+        console.log(colors);
+
+        // 需求：删除green
+        // 相当于要删除 指定成员 splice方法
+        // splice有三个参数 params1:下标[包含] params2:删除几个，[params3]在删除的同时进行元素替换
+        var arr = [1,2,3,4,5];
+        arr.splice(2,1);
+        console.log(arr);
+
+        var arr2 = ['a','b','c','d','e'];
+        arr2.splice(3,1,'f','g');
+        console.log(arr2);
+
+        var arr3 = ['str',null,undefined,false,0,''];
+        // 需求：删除undefined和false
+        arr3.splice(2,2);
+        console.log(arr3);
+
+        // 练习：请筛选出大于5的成员，且加入到一个新的数组中，用push来做
+        var numberList = [2,4,6,8,10];
+        var newList = [];
+        for(var i = 0 ;i < numberList.length; i++){
+            // 如果大于5 ，则把大于5的值push到新的数组中
+
+            /**
+             * 第一轮 ：i = 0 ,
+             *         numberList[i] = 2
+             *         numberList[i] > 5 ? x  
+             * 
+             * 
+             * 第二轮： i = 1 ,
+             *         numberList[i] = 4 
+             *         numberList[i] = 4 ? x
+             * 
+             * 第三轮： i = 2,
+             *          numberList[i] = 6 ? v
+             *          执行添加处理逻辑了
+             *          newList.push(numberList[i])
+            */ 
+            if(numberList[i] > 5) {
+                newList.push(numberList[i])
+            }
+        }
+        console.log(newList);
+
+    </script>
+</body>
+</html>

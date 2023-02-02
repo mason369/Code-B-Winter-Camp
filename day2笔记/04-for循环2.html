@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 如果for循环中，没有给出跳出循环的条件，会发生什么样的现象？
+        // 当i=0的时候，条件判断存在隐式转换，Boolean(i)=fasle,无法进入循环体
+        // for(var i = 0; i ;i++){
+        //     console.log(i);
+        // }
+
+        // 当没有给定条件判断的时候，一旦条件恒成立，则会造成死循环
+        // for(var i = 1;i ;i++){
+        //     console.log(i);
+        // }
+        // 当i=11的时候，终止循环
+        // for(var i = 1 ;i ;i++){
+        //     if(i === 11){
+        //         break
+        //     };
+        //     console.log(i);
+        // }
+
+        // 当i=11的时候，终止循环，且不能够使用break关键字
+        // for(var i = 1;i;i++){
+        //     if(i === 11){
+        //         // ....
+        //         i = 0;
+        //     }
+        //     console.log(i);
+        // }
+
+
+        // 从0开始做加法，加到什么时候为止，最接近100的总和是多少？不能超过100?
+        // var sum = 0;
+        // for(var i = 0 ;i < 100;i++){
+        //     sum += i; //sum += i   => sum = sum +i
+        //     if(sum >= 100){
+        //         break
+        //     };
+        //     console.log(sum);
+        // }
+
+        // 打印100以内，跳过可以被7整除 或者 个位数是7的数
+        for(var i = 0;i < 100;i++){
+            if(i % 7 === 0 || i % 10 === 7){
+                continue;
+            }
+
+            console.log(i);
+        }
+
+        // 打印100以内的，可以被4或5或6整除的数
+        for(var i = 0;i < 100 ;i++){
+            if(i % 4 === 0 || i % 5 === 0 || i % 6 === 0){
+                console.log(i);
+            }
+        }
+    </script>
+</body>
+</html>

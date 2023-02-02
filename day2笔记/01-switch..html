@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 条件分支语句 
+         * 1. if
+         * 2. switch
+         * 
+        */
+        // '成都 || 上海 || 北京' ;
+      
+    //    console.log(city);
+       // window.prompt可以在页面打开时，让用户输入内容
+    //    if(city === '成都'){
+    //       console.log('成都');
+    //    }else if(city === '上海'){
+    //       console.log('上海');
+    //    }else if(city === '北京'){
+    //       console.log('beijing');
+    //    }
+
+      /**
+       * switch(变量){
+       *    case 值 :
+       *        
+       *    break; 
+       *    case 值 :
+       *      ...do
+       *    break;  注意，break后面一定是分号
+       *    ...... 
+       *    default: 主要用于兜底动作
+       *        
+       * }
+      */
+    //  ctrl + / 
+    //   var city  = window.prompt('请输入城市，成都 || 上海 || 北京');
+    //   switch(city){
+    //      case '成都' :
+    //         console.log('成都');
+    //         break;
+    //      case '上海' : 
+    //         console.log('上海'); 
+    //         break;
+    //      case '北京' : 
+    //         console.log('北京');
+    //         break;
+    //      default: 
+    //         console.log('您输入的城市是' + city);        
+    //   }
+
+      /**
+       * 需求：
+       * 后端返回了状态码 code
+       * 401 => 则提示 服务器地址错误
+       * 404 =>        页面没有找到
+       * 500 =>        服务器报错，请联系后端处理
+       * 其他 =>        没有定位到原因，请前后端共同处理
+      */
+
+    //   var code = window.prompt('后端返回的状态码是：');
+    var code = '401';
+      switch (code) {
+        case '401':
+            console.log('服务器地址错误');
+            break;
+        case '404':
+            console.log('页面没有找到');
+            break;
+        case '500':
+            console.log('服务器报错，请联系后端处理');
+            break;   
+        default:
+            console.log('没有定位到原因，请前后端共同处理');
+            break;
+      }
+
+      /**
+       * if 跟 switch 都可以用于做条件判断
+       * if适合一些没有固定值的场景判断，比如范围性的
+       * switch比较适合条件相对固定的，有明确的值的场景
+      */
+
+      // 使用if与switch结合的方式来做
+      /**
+       * 请用户输入星期几，填写上午还是下午，在页面输出相应的任务
+       * 星期一：上午 下午
+       *        星期一，上午，在学习'html'
+       *        星期一，下午，在学习'js'
+       * 星期二： 上午 下午
+       *        星期二 ，上午，在学习'java'
+       *        星期二，下午，在学习'php'
+       * 如果输入的是其他值：
+       *        什么都没学
+       * 
+      */
+
+      var week = window.prompt('请输入星期几'),
+          time = window.prompt('请输入上午还是下午');
+
+      switch(week){
+        case '星期一': 
+            if(time === '上午') {
+                console.log(week + time + '在学习html');
+            }else{ 
+                console.log(week + time + '在学习js');
+            };
+            break;
+
+        case '星期二':  
+            if(time === '上午') {
+                    console.log(week + time + '在学习java');
+                }else{ 
+                    console.log(week + time + '在学习PHP');
+                };
+                break;  
+
+        default: 
+            console.log('什么都没学');        
+      }
+    </script>
+</body>
+</html>
