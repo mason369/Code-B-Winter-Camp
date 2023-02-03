@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 对象遍历
+         * 
+         * 数组中我们使用for循环可以对数组进行遍历
+         * 在对象中，我们需要使用for in 来对对象进行遍历
+        */
+
+        var personInfo = {
+            name:'tom',
+            age : 18 ,
+            money: 100
+        }
+
+        for(var k in personInfo){
+            console.log(k); // key  => 就是对象的所有属性
+            console.log(personInfo[k]);  //  => 就是对象的所有属性值 value
+        }
+    </script>
+</body>
+</html>

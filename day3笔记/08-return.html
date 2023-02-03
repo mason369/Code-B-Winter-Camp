@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 思考：函数到底是用来干嘛的？为什么需要调用函数？
+         * 调用函数，就是希望函数能够返回一些实质的信息给到使用者
+         * 每个函数都有返回值，默认是undefined
+         * 如果手动返回，则以手动返回为准
+         * 
+         * 函数遇到return关键字之后，会立即终止执行
+         * return 之后的代码都不会执行
+         * 
+        */
+
+       // 函数调用的时候，会默认返回undefined给使用者
+       function test(){
+          
+       }
+
+       console.log(test());
+
+       function getSum(n1,n2){
+            console.log(n1 + n2);
+        //   return n1 + n2;
+            // return undefined;
+       }
+       var result = getSum(1,2);
+       console.log(result);
+    //    console.log(getSum(1,2));
+
+       function fn(a, b){
+          return a + b ;
+          console.log(1 + 2);
+       }
+       fn(2,3);
+
+
+       // 声明一个函数，求最小值,接收两个参数，并且将结果返回给用户
+       var getMin = function(n1 ,n2){
+        //   if(n1 > n2) {
+        //      return n2
+        //   }else{
+        //     return n1
+        //   }
+          return n1 > n2 ? n2 : n1
+       }
+       console.log(getMin(5,2));
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初识对象</title>
+</head>
+<body>
+    <script>
+        /**
+         * 对象：更能够清晰地表达成员的对应关系
+         * 语法： Object 
+         *      {}  => 空对象
+         *  
+        */
+        // var personInfo = ['小王',21,'male'];
+
+        var arr = [] ;
+        var obj = {} ;
+        console.log(obj);
+
+        // 需求：把小王放在对象中
+        var personInfo = {
+            // 每一个成员，叫做对象的属性 => key  ,每个属性的值叫做 => value
+            // 每个成员之间需要使用 ' , ' 来隔开
+            name   : '小王' ,
+            age    : 21 ,
+            gender : 'male'
+        }
+
+        console.log(personInfo);
+        console.table(personInfo);
+ 
+
+
+
+    </script>
+</body>
+</html>

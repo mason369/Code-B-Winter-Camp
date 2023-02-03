@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 作用域：为了减少变量在js中的命名冲突
+         * 变量污染
+         * 
+         * 作用域中分为 全局作用域  局部作用域(ES5) 
+         * 被script标签包裹起来的这整块内容都是全局作用域，或者通过script标签从外部引入的js也在全局作用域中
+         * 
+         * 在函数内部就是局部作用域
+         * 
+         * 函数作用域中的变量，只能在该函数内部使用
+         * 
+         * 全局中的变量，任何地方都可以使用
+         * 
+         * 变量的作用域也分为局部的和全局的 
+         * 
+         * 在函数外声明的变量就是全局变量
+         * 
+         * 在函数内声明的变量就是局部变量
+         * 
+         * 
+        */
+
+         var number = 5
+         function fn(){
+             var number = 2;
+             console.log(number); // 2
+         }
+         fn();
+         console.log(number); // 5
+
+
+         // 当你在函数中声明变量的如果，如果没有加var ,则会自动变为暗示全局变量
+         var n1 = 3;
+         function test(){
+             n2 = 2;
+             console.log(n1); // 3
+         };
+         test()
+         console.log(n2); // error
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 函数：
+         * 1. 认识函数
+         *    为什么我们要使用函数？
+        */
+
+        var arr1 = [1, 2, 3, 4, 5];
+        // 需求：筛选arr1中大于3的数，并且存储到newArr中
+        
+        var newArr = [];
+        for(var i = 0;i < arr1.length ; i++){
+            if(arr1[i] > 3){
+                newArr.push(arr1[i])
+            }
+        }
+        console.log(newArr);
+
+        // 需求：筛选arr2中大于3的数，并且存储到newArr中
+        
+        var arr2 = [1, 2, 3, 4, 5, 6, 7];
+        var newArr = [];
+        for(var i = 0;i < arr2.length ; i++){
+            if(arr2[i] > 3){
+                newArr.push(arr2[i])
+            }
+        }
+        console.log(newArr);
+
+        // 用函数来改写一下逻辑
+        function getNewArr(oldArr){
+            var newArr = [];
+            for(var i = 0 ;i < oldArr.length ;i++){
+                if(oldArr[i] > 3){
+                    newArr.push(oldArr[i])
+                }
+            }
+            console.log(newArr,'newArr');
+        }
+
+        getNewArr([1,2,3,4,5,6]);
+        getNewArr([1,2,3,4,5,6,7,8,9]);
+    </script>
+</body>
+</html>

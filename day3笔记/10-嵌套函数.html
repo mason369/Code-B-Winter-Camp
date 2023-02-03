@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 嵌套函数 => 执行顺序
+        */
+    //    function fn1(){
+    //        console.log(1);
+    //        fn2();
+    //        console.log(2);
+    //    }
+
+    //    function fn2(){
+    //        console.log(3);
+    //    }
+
+    //    fn1(); // 1 3 2
+
+    //    // ---- 分隔线
+    //    function test1(){
+    //       function test2(){
+    //          console.log(1);
+    //       }
+    //       console.log(2);
+    //       test2();
+    //    }
+
+    //    test1(); // 2 1
+       
+
+    //    // -- 分割线
+    //    // 函数内部声明的变量，外部无法访问，但是函数可以访问外部的变量
+    //    var age = 21;
+    //    function fn(){
+    //       var number = 1;
+    //       // fn里面有age吗？没有 => 往外找
+    //       console.log(age); // 21
+    //    };
+    //    fn();
+    //    console.log(number); // number is not defined
+
+
+       // --- 分割线
+       var myName = 'tom';
+       function getName(){
+          console.log(1);
+          demo();
+          console.log(2);
+          console.log(age);
+       }
+
+       function demo(){
+            console.log(myName);
+            var age = 18
+       }
+
+       getName();// 1 tom 2 error
+    </script>
+</body>
+</html>

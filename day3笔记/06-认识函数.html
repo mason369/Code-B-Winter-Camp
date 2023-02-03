@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 函数的基本使用：
+         * 分为两步：
+         * 
+         * 1. 使用function 关键字来声明函数
+         * 2. 通过函数名调用函数
+        */
+
+        // 函数声明 ，只是声明而已，如果没有人调用该函数，则该函数不会自动执行
+        // 函数的命名一定要有语义化 
+        function introduce(){
+            console.log('hello, 我是函数');// 函数体
+        }
+
+        // 调用函数，使用函数名字进行调用，一旦函数被调用，则会执行函数体中的内容
+        introduce();
+
+        // 练习：写一个函数，用来告诉别人，你今天中午决定吃什么？
+        function eat(){
+            console.log('中午吃冒菜');
+        }
+        eat();
+
+
+        // 没有名字的函数 叫做 匿名函数  => 报错 
+        // 这种叫做字面量的方式  => 函数表达式
+        var fn = function(){
+            console.log('123'); 
+        }
+        fn()
+
+        // 小组讨论，以下情况，如何调用函数？
+        var test = function res(){
+            console.log(1);
+        }
+        test();
+        
+
+        var n1 = function fn2(){};
+        console.log(n1.name);// 虽然在执行的时候，会忽略函数名字，但是函数名没有丢失
+        /**
+         * 使用函数表达式声明函数，JS底层会自动忽略函数名称，变量test
+         * 函数的名字是 n1 还是 fn2?
+         * arguments.callee => 可以返回当前正在被执行的函数本身 => 非严格模式下会返回，严格模式下会报错
+        */
+
+        var res = function test1(){
+            console.log(arguments.callee.name);
+        }
+        res();
+        console.log(res.name);
+
+        // 思考：函数名是否可以更改？
+        // 证明：函数名不可更改 => 描述符配置项 writable:false
+        function demo(){};
+        demo.name = 'demo2';
+        console.log(demo.name);
+
+
+
+    </script>
+</body>
+</html>

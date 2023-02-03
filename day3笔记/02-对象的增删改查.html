@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 对象的增删改查
+         * 1. 如何访问对象的属性？
+        */
+
+        var personInfo = {
+            name:'tom',
+            age: 19,
+            money : 10000
+        }
+
+        // 访问money 
+        // 1. 可以通过对象.属性来访问   2.对象['属性']来访问
+        console.log(personInfo.money);
+        console.log(personInfo['money']);
+
+        // 2. 修改age 为 20
+        personInfo['age'] = 20;
+        personInfo.age = 20;
+        console.log(personInfo);
+
+        // 3. 增加属性tall
+        personInfo.tall = '180cm'
+        console.log(personInfo);
+
+        // 4. 删除age
+        // 使用delete 关键字就可以删除对象的属性
+        delete personInfo.age ;
+        console.log(personInfo);
+
+    </script>
+</body>
+</html>

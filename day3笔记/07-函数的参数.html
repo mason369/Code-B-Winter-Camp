@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 函数的参数：
+         * 1. 可以通过传递参数，实现让函数重复不同的内容
+         * 2. 参数分为实参和形参
+         * 3. 形参：形式上的参数，用来接收实参，类似于一个变量
+         * 4. 实参：实际传入函数内部执行的参数，会被形参所接收，在函数调用时，直接传入即可
+         * 5. 参数可以有，也可以没有，根据实际情况来
+         * 6. 参数可以传递一个，也可以传递多个
+        */
+
+        function getUserInfo(name,age,gender){
+            // 姓名 年龄  性别
+            console.log(name, age, gender);
+        }
+
+        getUserInfo('小王',21,'male');
+        getUserInfo('POI',20,'female');
+
+        // 练习：声明一个函数，功能为求和，接收两个参数，要求打印出来这两个参数的和
+
+        function getSum(n1,n2){
+            console.log(n1 + n2);
+        }
+        getSum(2,5);
+
+        /**
+         * 形参和实参的注意事项
+         * 形参和实参是一一对应的关系
+         * 实参可以为任意类型的数据结构
+         * 当实参个数小于形参时，多余出来的形参默认为undefined
+         * 1 = > a 
+         * 2 = > b
+         * 3 = > c
+        */
+       function test(a,b,c){
+          console.log(a + b + c);
+       }
+       test(1,2,3);
+
+
+       function test2(a,b,c){
+          console.log(a,b,c); // 'false' 'NaN' 'undefined'
+          console.log(typeof b);// number
+          // a , b , c
+       }
+       test2('false',NaN);
+
+       function test3(a,b){
+          console.log(a,b);// 1 2
+       }
+       test3(1,2,3);
+
+       // 思考，如果函数调用时，实参的个数不确定的情况，我们应该如何设置形参的个数？
+       // arguments => 参数列表 (类数组对象) ，常用于不确定外部传入多少实参的情况，得用在函数内部获取实参
+       // 通过arguments.length可以获取实参长度
+       // arguments自身是一个伪数组，因为它拥有length长度以及下标，但是缺少真实数组身上的很多方法
+       function test4(){
+          console.log(arguments);
+          console.log(arguments.length);
+       }
+       test4(1,2,3,4,5,6,7,8)
+
+       // 1.声明一个求最大值的函数，要求传入任意两个值，都能输出最大值，要求：结合三元运算符来做
+       // 思路：1.声明一个函数getMax(),2.实参有两个，形参也需要有两个 3.判断两个参数，哪个大就输出哪个
+       function getMax(n1,n2){
+          n1 > n2 ? console.log(n1) 
+                  : console.log(n2)
+       }
+       getMax(1,3);
+
+       // 声明一个求和函数，参数不固定，要求求和
+       var getSum = function(){
+            var sum = 0; 
+            for(var i = 0 ; i < arguments.length; i++){
+                sum += arguments[i]
+            }
+            console.log(sum);
+       }
+
+       getSum(1,2,3,4,5)
+    </script>
+</body>
+</html>

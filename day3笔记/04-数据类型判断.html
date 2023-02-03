@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * typeof 判断数据类型 => 重点
+         * 
+         * typeof()会 返回数据类型给我们 null undefined string boolean number object function 
+         * 
+         * console.log(typeof(typeof(null)));// 阿里面试题
+         * 
+         *    console.log(typeof(null)); => 面试题
+        */
+
+        // console.log(typeof(123)); // 'number'
+        // console.log(typeof('123')); // 'string'
+        // console.log(typeof(true)); // 'boolean'
+        // console.log(typeof(null)); // 'object' 
+        // console.log(typeof(undefined)); // 'undefined '
+        // console.log(typeof({})); // 'object'
+
+        // console.log(typeof(typeof(null)));// 阿里面试题  object,object ,  string ,  null , 
+
+        /**
+         * 1. (typeof(null)) => object  => 第一次判断之后，结果会以 字符串的形式输出 
+         * 2. typeof('object') => string
+        */
+
+        // 'objcet'   注意分清楚 object 变量和 'object'的区别
+        if((typeof null) == object){
+            console.log('是object'); 
+        }else{ 
+            console.log('不是'); 
+        }
+    </script>
+</body>
+</html>
