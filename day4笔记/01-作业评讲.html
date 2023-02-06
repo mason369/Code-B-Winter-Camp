@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义一个函数，从外部接收饮料名称，返回对应的价格
+        var drinkName = window.prompt('请输入饮料的名称');
+        function drinkPrice(name){
+            var price = 0 ;
+            switch(name){
+                case '可乐' : 
+                   price = 3; 
+                   break ;
+                case '雪碧' : 
+                   price = 4; 
+                   break ;
+                case '王老吉' : 
+                   price = 5; 
+                   break ; 
+                default : 
+                   price = 6;
+                   break;     
+            }
+            return price
+        }
+
+        var price = drinkPrice(drinkName)
+        console.log(price);
+
+    </script>
+</body>
+</html>

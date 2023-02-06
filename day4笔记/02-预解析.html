@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 预解析
+        */
+
+       // 1. 变量提升 => 只提升变量，不提升值
+       // 2. 按照顺序执行代码
+    //    var a = undefined;
+    //    console.log(a);// undefined 
+    //    a = 1;
+    //    console.log(a);// 1
+
+
+    //     // 1. 函数提升 => 函数整体提升
+    //    console.log(a,b);// function a(){}    undefined
+    //    function a(){};
+    //    var b = function(){};
+
+    //    // 在执行代码之前，先进行预解析 => 1.变量提升 ； 2.函数声明提升
+    //    function a(){};
+    //    var b = undefined;
+    //    console.log(a,b);
+    //    b = function(){};
+    //    console.log(b);
+    
+          console.log(a); // error a is not defined => 当变量没有声明的时候，js会认为你并未向我申请要一点空间  1
+          var a  = 1 ;
+
+          // JS在执行代码之前，先执行预解析
+          // 1. 查找所有用var 声明了的变量，并提升到最顶层
+          // 2. 查找所有函数声明 function a(){},并整体提升到顶层
+          // 3. 一行一行按照顺序执行代码
+
+          console.log(a);
+          var a = 1;
+          console.log(a); // 1
+
+          /**
+           * 1. var a 
+           * 2. console.log(a); undefined
+           * 3. a = 1;
+          */
+
+          console.log(a,b);
+          function a(){};
+          var b = function(){};
+          console.log(b);
+
+          /**
+           * 1. 寻找var声明的变量及函数声明
+           * var b 
+           * function a(){};
+           * 
+           * 2. 执行代码
+           * console.log(a,b); // function a(){} undefined
+           * 
+           *  b = function(){};
+           *  console.log(b); 
+          */
+
+          // 全局对象 GO => global object {} => 全局执行期上下文
+          // 在全局声明的变量和函数都属于GO对象  window === GO
+          // 在GO中JS引擎解析代码的步骤
+          /**
+           * 1. 寻找变量声明
+           * 2. 寻找函数声明
+           * 3. 执行代码
+           * 
+           * 
+          */
+
+          console.log(a,b);
+          function a(){};
+          var b = function(){};
+          console.log(b);
+          /**
+           * 预编译：
+           * GO = {
+           *    b : undefiend  => function b(){}
+           * 
+           *    a : function a(){}  
+           * }
+          */
+
+          // 全局对象 GO => global object {} => 全局执行期上下文
+          // 在全局声明的变量和函数都属于GO对象  window === GO
+          // 在GO中JS引擎解析代码的步骤
+          /**
+           * 1. 寻找变量声明
+           * 2. 寻找函数声明
+           * 3. 执行代码
+           * 
+           * 
+            /**
+           * AO => activation object 活跃对象 ，函数执行期上下文 {}
+           * 
+           * 1.在 AO 中 JS引擎预编译的步骤：
+           * 
+           * 1. 寻找函数的形参和变量声明
+           * 2. 实参的值赋值给形参
+           * 3. 寻找函数声明
+           * 4. 执行函数
+           * 
+          */
+          function test(a,b){
+             console.log(a); // 1
+             c = 0 ;
+             var c ;
+             a = 5 ; 
+             b = 6 ;
+             console.log(b); // undefined  6
+             function b(){};
+             function d(){};
+             console.log(b); //  6
+             console.log(c); //  0
+          }
+          test(1);
+
+          /**
+           * AO = { 
+           *    a: undefined  => 1  => 5
+           *    b: undefined  => function b(){}  => 6
+           *    c: undefined  => 0
+           *    d: function d(){}
+           * }
+          */
+
+         /**
+          * 作用域链：实际上AO和GO就组成了函数的作用域链
+          * 函数在定义的时候，就默认生成了系统属性[[scope]],[[scope]]中就存储了该函数的作用域链[[scope chain]]
+          * 作用域链的最顶端存放的就是AO，AO下面就是GO，查找规则就是优先从AO开始找，找不到的话，再往下面找GO
+         */
+
+       
+          
+    </script>
+</body>
+</html>

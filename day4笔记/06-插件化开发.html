@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 插件化开发：
+         * 插件模块一般在程序加载的时候就要执行，所以需要用到立即执行函数IIFE
+         * 而且需要结合window来实现
+         * 
+         * 一般插件化开发都是面向对象的方式
+        */
+
+        // 比如我们要开发一个功能，这个功能由3部分组成，分别由三位前端来开发，最终需要在一个文件中汇总
+        // 会出现什么问题？变量污染的问题 
+
+        // ;(function(){
+        //     function Test(){};
+        //     window.Test = Test;
+        // })();
+
+        // var t1 = new Test();
+        // console.log(t1);
+
+        // ;(function(){
+        //     console.log(1);
+        //     //return undefined
+        // })()
+
+        // ;(function(){
+        //     console.log(2);
+        // })();
+
+        // 使用插件开发简单计算器 需要用户输入2个值，且插件中需要包含4个方法 + - * / 
+        // 最终将计算结果返回给用户
+
+        /**
+         * 插件化开发步骤：
+         * 1. 声明一个IIFE
+         * 2. 声明一个构造函数
+         * 3. 将构造函数暴露给window
+         * 4. 在外层new构造函数
+         * 5. 往构造函数身上添加属性和方法
+         * */ 
+        ;(function(){
+
+            function Compute(firstNumber,secondNumber){
+                this.firstNumber = firstNumber || 0;
+                this.secondNumber = secondNumber || 0;
+            };
+
+            Compute.prototype = {
+                add:function(){
+                    return this.firstNumber + this.secondNumber
+                },
+                jian:function(){
+                    return this.firstNumber - this.secondNumber
+                },
+                cheng:function(){
+                    return this.firstNumber * this.secondNumber
+                },
+                chu:function(){
+                    return this.firstNumber / this.secondNumber
+                }
+            }
+
+            window.Compute = Compute;
+
+        })();
+
+        var res = new Compute(1,2);
+        console.log(res.add());
+        console.log(res.jian());
+        
+
+        
+    </script>
+</body>
+</html>

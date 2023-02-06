@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * IIFE ： immediately invoked function expression 立即执行函数
+         * 普通函数的问题：需要调用才会执行，且占用了内存
+         * 
+         * IIFE解决了什么问题:
+         * 1. 页面加载时，自动执行
+         * 2. 执行完成之后，立即释放内存空间，立即销毁
+         * 
+         * 语法：
+         * (function(){})()
+        */
+
+        // (function(){
+        //     console.log(1);
+        // })();
+
+        // 具名的立即执行函数: 在立即执行函数中，如果加上了函数名，会被忽略掉
+        // console.log(test);
+        // (function test(){
+        //     var a = 1;
+        //     var b = 2;
+        //     console.log(a + b);
+        // })()
+        // console.log(test);
+
+        // 传参 return到哪儿了？全局 => GO === window 
+        var res = (function(a,b){
+            return a + b 
+        })(1,2);
+
+        (function(a,b){
+            var sum = a + b;
+            // 插件化开发中常用手段
+            window.sum = sum;
+        })(2,2)
+        console.log(sum);
+
+        // console.log(window.res);
+
+        // console.log(c);// error
+        // var c = 1;
+        // console.log(c); // 1
+        // console.log(window.c); // 1
+
+        // /**
+        //  * window {
+        //  *    test:function(){}
+        //  * }
+        // */
+        // function test(){
+        //     console.log(2);
+        // }
+        // window.test()
+
+        // console.log(c);// error
+        // console.log(window.c); // error undefined 
+
+        // var obj = {
+        //     a: 1
+        // }
+        // console.log(obj.b);
+    </script>
+</body>
+</html>

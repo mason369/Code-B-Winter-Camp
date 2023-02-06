@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 构造函数 : 用于帮我们创建对象的
+         * 语法：function Test(){}
+        */
+
+        // 需求：声明三个对象，且三个对象中都有一个study属性，值是'前端'
+        var personInfo1 = {
+            study: '前端'
+        };
+
+        var personInfo2 = {
+            study: '前端'
+        };
+
+        var personInfo3 = {
+            study: '前端'
+        }
+
+        // function CreatePersonInfo(){
+        //     this.study = '前端'
+        // }
+        // var p1 = new CreatePersonInfo();
+        // console.log(p1);
+        // var p2 = new CreatePersonInfo();//{}
+        // console.log(p2);
+        // console.log(p1 === p2);
+
+        // console.log({} === {});
+        // console.log([] === []);
+
+
+        function CreatePersonInfo(name){
+            this.name = name ;// this表示当前的意思，每次new的时候，this就代表new的时候创建的空对象
+        }
+
+        var p1 = new CreatePersonInfo('tom');// 创建对象的过程叫做对象的实例化
+        console.log(p1);// 实例化对象
+        var p2 = new CreatePersonInfo('小王')
+        console.log(p2);
+        /**
+         * new 在执行时做了什么?
+         * 1. 在内存中创建了一个空对象  {}
+         * 2. this指向创建的空对象  this => {}
+         * 3. 执行构造函数的时候，为这个空对象添加属性或方法  {study:'前端'}
+         * 4. 返回这个对象(默认自动返回) return {study:'前端'}
+        */
+
+        // 求任意两个值的和
+        function sum(n1,n2){
+            return n1+n2
+        }
+        sum(1,2);
+
+        // 练习：创建一个动物的构造函数，要求能够自定义传入legs,和eyes的参数，且添加默认方法running
+        function Animal(legs,eyes){
+            this.legs = legs;
+            this.eyes = eyes;
+            this.running = function(){
+                console.log('我会跑');
+            }
+        };
+
+        var a1 = new Animal(4,2);
+        console.log(a1);
+        a1.running();
+
+        // 练习：创建一个饮料的构造函数，要求能够自定义传入价格、名称、且有默认属性颜色，值是红色，有默认方法drink
+        function Drinks(price,name){
+            this.price = price ;
+            this.name  = name  ;
+    
+            // 所以，提供了一个容器，用于存在这些个性化需求 这个容器叫做prototype
+            // prototype主要在设计上用于存放实例对象的工共祖先
+        };
+
+        // 在原型上存放工共属性或方法,原型其实就是一个容器，
+        // 当实例对象要访问属性或者方法的时候，优先从自身去找，如果能够找到，则使用自己的属性和方法
+        // 如果没有找到，则顺着原型往下面找，直到找到Object.prototype为止。这样的链式查找机制也叫做原型链
+        Drinks.prototype.color = 'red';
+        Drinks.prototype.drink = function(){console.log('饮料')}
+
+        var d1 = new Drinks(10,'红牛');
+        var d2 = new Drinks(5,'唯咦');
+        console.log(d1.color);
+        console.log(d2.drink());
+
+        // 红牛要新增一个属性叫做外壳 shell 值是'金色的'
+
+        function Test(a,b){
+            // c的值是固定的，也就意味着，每个实例化对象身上都会有c这个属性，值是'c';
+            this.a = a ;
+            this.b = b ;
+        };
+        // 具有共同的值的属性，就不用挂载到每一个实例身上了，太大了，太多了，太重了
+        // 我可以给你提供一个容器，把这些内容放到容器里面，你需要的时候再来找吧 ,prototype
+        // 所以，原型prototype中存放的就是所有实例对象的工共祖先
+        // 需要注意的是，所有的方法建议统一放在原型上
+        Test.prototype.c = 'c';
+        Test.prototype.d = 'd';
+        Test.prototype.e = 'e';
+        Test.prototype.a = 10;
+
+
+        var t1 = new Test(1,2);
+        var t2 = new Test(3,4);
+
+        console.log(t1.a);
+        console.log(t1);
+        console.log(t2.c);
+
+    </script>
+</body>
+</html>
