@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 写一个插件，名字叫做Vue,
+         * Vue中有watch方法，有filter方法，有methods方法
+         * Vue中有data、computed这两个属性
+         * 
+         * 要求，能够接收用户传入的一个对象 {}
+        */
+
+       /**
+        * 1. 写一个分号 + IIFE
+        * 2. 写构造函数
+        * 3. 因为外部不能访问，IIFE执行完毕之后就会销毁，所以外部无法访问，所以得暴露出去
+        * 4. 外部使用
+       */
+      ;(function(){
+
+
+        var Vue = function(options){
+            this.data = options.data || 'data';
+            this.computed = options.computed || 'computed';
+        };
+
+        // 往原型(容器container)里面加上方法
+        Vue.prototype.watch = function(){};
+        Vue.prototype.filter = function(){};
+        Vue.prototype.methods = function(){};
+
+
+        window.Vue = Vue;
+
+      })();
+
+      var obj = {
+       
+      }
+      var vue = new Vue({
+        data:'data',
+        computed:'computed'
+      });
+    </script>
+</body>
+</html>

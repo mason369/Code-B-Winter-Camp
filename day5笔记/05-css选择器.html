@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /**
+        1. 第一个div是红色
+        2. 第二个div是绿色
+
+        类名：写css的时候最常用的一种选择器方式
+        类名 {}
+        类名用 class关键字来声明
+        在css中调用的时候，需要加上一个点
+        */
+        .firstDiv {
+            color:red;
+        }
+
+        .secondDiv {
+            color:green
+        }
+
+        /* id 选择器
+        给标签加id属性
+        调用的时候用#来调用
+        注意：ID选择器通常用于给JS提供选择的内容
+        设置样式的时候，更推荐大家使用class选择器，id选择器主要用于js
+
+        浏览器会自带一个外边距margin
+        我们在开发的时候，需要手动取消掉margin
+        通配符选择器就是可以帮我们一次性完成这个工作的人
+        * {}
+
+        */
+
+        #p1 {
+            color:skyblue;
+            font-size: 20px;
+            /* 谷歌默认的粗细是400，一般如果要改为粗体，700就是合理值 */
+            font-weight: 700 ;
+            background-color: rgb(182, 217, 117);
+        }
+        #p2 {
+            color:pink
+        }
+
+        * {
+            margin:0;
+         
+        }
+
+        /* 如果要去除按钮外部的默认黑色线条，将边框设置为none即可 */
+        button {
+            font-weight: 700;
+            border: none;
+            width: 100px;
+            height: 30px;
+        }
+
+        .success {
+            background-color: green;
+        }
+        
+        .warning {
+            background-color: orange;
+        }
+
+        .fail {
+            background-color: red;
+        }
+        
+        .hasBorder {
+            border:1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="firstDiv">this is the first div</div>
+    <div class="secondDiv">this is the second div</div>
+    <p id="p1">p1</p>
+    <p id="p2">p2</p>
+
+
+<!-- 
+    练习：声明三个div标签，内容自定义
+    要求：第一个div的颜色是红色，第二个是绿色，第三个是蓝色
+    用class来做 -->
+<!-- 
+    练习：页面上呈现3个按钮，每个按钮字体粗细为700
+         3个按钮分别为成功的按钮、失败的按钮和警告的按钮
+         成功的按钮颜色为green,失败的按钮为red,警告的按钮为orange
+         去除边框
+         给按钮添加尺寸：宽和高 宽给100px 高30px；
+         width : Kuan
+         height: gao
+        -->
+
+         <br>
+        <button class="success">成功</button>
+        <button class="fail">失败</button>
+        <button class="warning">警告</button>
+
+       <div class="container">
+          <div class="header">
+            <div class="title">
+
+            </div>
+          </div>
+          <div class="content">
+            <div class="username"></div>
+            <div class="password"></div>
+            <button class="login"></button>
+          </div>
+       </div>
+
+       <p class="noBorder">这是没有border的p标签</p>
+       <p class="hasBorder">这是有border的标签</p>
+</body>
+</html>

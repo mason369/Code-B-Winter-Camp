@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            color:yellow
+        }
+
+        .warpper {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">容器</div>
+    <div class="warpper">容器2</div>
+    <script>
+        /**
+         * DOM: 文档对象模型 document object model
+         * DOM就是操作网页元素的
+         * 一个页面就是一个文档，dom中用document来表示
+         * 元素：页面中的所有标签及其包含的内容，统称为元素   <div>123</div>
+         * 节点：网页中的所有标签都是节点 div
+         * dom的作用：实际开发中，dom就是用来获取元素的
+         * 
+         * 要获取dom元素，就得用到选择器
+         * getElementById  => 通过元素id来获取
+         * getElementsByClassName  => 通过类名来获取
+         * getElementsByTagName => 通过标签名来获取
+         * 
+        */
+         var oContainer = document.getElementById('container');
+         console.log(oContainer);
+         oContainer.style.color = 'red';
+
+         var oWarrper = document.getElementsByClassName('warpper')[0];
+         console.log(oWarrper);
+         // js中，如果属性由多个单词组成，则需要改为驼峰命名
+         // js无法直接修改样式，而是通过行内样式表给元素添加样式的方式，来增加权重，达到的效果而已
+         oWarrper.style.backgroundColor = 'orange'
+    </script>
+</body>
+</html>

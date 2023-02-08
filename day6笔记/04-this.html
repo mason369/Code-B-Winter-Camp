@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+<body>
+    <script>
+        /**
+         * this 指向问题
+         * 1. 全局作用域中的this,默认指向window
+         * 2. 函数中的this默认指向函数的调用者
+         *    如果函数调用的时候，没有调用者，则默认由window来调用
+         * 3. 构造函数中的this，指向实例化对象
+         * 4. 箭头函数没有自己的this，this指向谁，是看上下文对象GO、AO
+        */
+
+        // var a = 10 ;
+        // console.log(a);// 10
+        // console.log(window.a);// 10
+        // console.log(this.a);// 10
+
+
+        // var b = 20 ;
+        // var obj = {
+        //     b:30,
+        //     fn:function(){
+        //         console.log(this.b);//30
+        //     }
+        // }
+        // obj.fn();
+
+        // var c = 30;
+        // function test(){
+        //     var c = 40;
+        //     console.log(this.c);// 30
+        // }
+        // window.test();
+
+        // function Test(){
+        //     this.d = 10;// 
+        // };
+        // var t = new Test();
+        // console.log(t);
+
+        // // 函数表达式
+        // var demo = function(){
+        //     console.log(arguments);
+        // };
+        // demo();
+        /**
+         * 箭头函数 => es中提出来的
+         * 语法：()=>{}
+         * 1. 没有arguments
+         * 2. 如果执行体中只有一句话，可以不加花括号
+         * 3. 如果形参只有一位，可以省略小括号
+         * 4. 不加花括号的时候，默认返回结果
+         * 5. 箭头函数没有自己的this,this指向谁，是看上下文对象 => GO / AO
+         * */ 
+
+        //  var demo = () => {
+        //     console.log(1);
+        //  }
+        //  demo();
+
+        //  var a = (a)=>{
+        //     console.log(a);
+        //     // console.log(arguments);
+        //  }
+        //  a(12); 
+
+        //  var b = a => console.log(a);
+
+        //  b(5);
+
+        //  var test1 = function(){
+        //     return 3
+        //  }
+        //  console.log(test1());
+
+        //  var test2 = a => a;
+        //  console.log(test2(6));
+
+        // // console.log( test2());
+
+        // var n = 1;
+        // var object = {
+        //     n:2,
+        //     fn:()=>{
+        //         console.log(this.n);// 1
+        //     }
+        // };
+        // object.fn();
+
+        // var n = 1 ;
+        // function test(){
+        //     var n = 2;
+        //     var test2 = ()=>{
+        //         console.log(this.n);// 1
+        //     };
+        //     test2();
+        // }
+        // window.test();
+
+        var n = 1;
+        var obj = {
+            t1:function(){
+                var n = 2;
+                var t2 = ()=>{
+                    console.log(this.n);// undefined;1;2
+                };
+                t2()
+            }
+
+        }
+        obj.t1()
+    </script>
+</body>
+</html>

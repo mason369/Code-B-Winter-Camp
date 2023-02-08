@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="input" placeholder="请输入内容">
+    <button class="button">搜索一下</button>
+    <div class="content">您的搜索结果为</div>
+    <script>
+        /**
+         * 百度搜索案例
+         * 有三个元素，input、button、div、
+         * 
+         * 1. 在输入框里面输入的内容，在点击按钮之后，能够显示在div中
+         * 2. div初始值为 "您的搜索结果为:"
+         * 3 .input框里面灰色字体提示："请您输入内容"
+        */
+       var oInput = document.getElementsByClassName('input')[0],
+           oButton = document.getElementsByClassName('button')[0],
+           oContent = document.getElementsByClassName('content')[0];
+
+       oButton.onclick = () =>{
+           // 先判断，是否为初次输入,如果不是，则先清空原来输入的结果，再加上本次输入的结果
+           if(oContent.innerText !== '您的搜索结果为'){
+             oContent.innerText = '您的搜索结果为';
+             oContent.innerText += oInput.value
+           }else{
+             // 如果是首次输入，则直接拼接
+             oContent.innerText += oInput.value
+           }
+           
+       };
+
+       oButton.addEventListener('click',function(){
+            // 先判断，是否为初次输入,如果不是，则先清空原来输入的结果，再加上本次输入的结果
+            if(oContent.innerText !== '您的搜索结果为'){
+                oContent.innerText = '您的搜索结果为';
+                oContent.innerText += oInput.value
+            }else{
+                // 如果是首次输入，则直接拼接
+                oContent.innerText += oInput.value
+            }
+       })
+    </script>
+</body>
+</html>

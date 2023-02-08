@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">盒子</div>
+    <script>
+        /**
+         * 需求：
+         * 1. 点击box，能够输出1
+         * 2. 研究：同时给box再绑定一个点击事件，输出2,
+         * 
+         * 
+         * 通过onclick这样的方式，只能同时给一个dom元素绑定一个事件
+         * 如果绑定多个，则以最后绑定的那个为准
+         * 那么，通过onclick绑定事件的这种方式，我们叫做 普通绑定
+         * 
+         * 如果要实现一个dom同时绑定多个事件，则需要用到另外一种绑定方式
+         * 这种方式叫做 事件监听
+         * 
+         * 
+        */
+        var oBox = document.getElementsByClassName('box')[0];
+
+        // oBox.onclick = () => console.log(1);
+        // oBox.onclick = () => console.log(2);
+        // 这种绑定事件的方式，就是事件监听
+        // 参数1：绑定的事件是什么，注意！不加on  , 
+        // 参数2：事件处理函数，用于处理逻辑
+        oBox.addEventListener('click',function(){
+            console.log(1);
+        });
+
+        oBox.addEventListener('click',function(){
+            console.log(2);
+        })
+    </script>
+</body>
+</html>

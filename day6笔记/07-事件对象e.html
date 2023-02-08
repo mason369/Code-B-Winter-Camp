@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">this is box</div>
+    <script>
+        /**
+         * 点击box，打印1
+         * 需求：我想看一下，我点击了谁
+         * 
+         * 事件对象
+        */
+        var oBox = document.getElementsByClassName('box')[0];
+
+        // 当点击了box之后，触发里面函数
+        oBox.addEventListener('click',function(e){
+            // 当事件产生时，系统会默认生成事件对象，通过e.target可以获取事件源
+            console.log(e.target);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			//  2.写一个Test插件，要求外部可以传入自定义配置对象，如果没有传入，则需要进行容错处理
+			//   实例化对象身上有以下属性：
+			//    width , height , backgroundColor,
+			//   有init方法，一旦调用方法，则可以将实例挂在到页面上
+
+			// 1.写IIFE
+			// 2.在实参中传入document对象，在形参中通过doc接收
+			// 3.获取元素
+			// 4.设置统一的入口函数，方便统一管理所有的执行函数
+			// 5.入口函数中，就要执行所有的绑定事件
+			// 6.定义绑定事件
+			// 7.单独抽离事件处理函数
+			setTimeout(() => {
+				(function (doc) {
+					// 4.设置统一的入口函数，方便统一管理所有的执行函数
+					function init(options) {
+						// 5.入口函数中，就要执行所有的绑定事件
+						bindEvent(options);
+					}
+
+					// 6.定义绑定事件
+					function bindEvent(options) {
+						document.addEventListener(
+							"load",
+							bindEventHandle(options),
+						);
+					}
+					// 7.单独抽离事件处理函数
+					function bindEventHandle(options) {
+						// 8.创建元素
+						var div = document.createElement("div");
+						// 9.设置样式
+						div.style.width = options.width || "100px";
+						div.style.height = options.height || "100px";
+						div.style.backgroundColor =
+							options.backgroundColor || "green";
+						// 10.将元素添加到页面中
+						document.body.appendChild(div);
+					}
+
+					//调用入口函数
+					init({
+						width: "100px",
+						height: "100px",
+						backgroundColor: "red",
+					});
+				})(document);
+			}, 3000);
+		</script>
+	</body>
+</html>

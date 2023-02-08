@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 键盘事件：
+         * onkeydown事件： 按键被按下时触发
+         * 直接在document文档上监控即可
+         * 
+        */
+       // 当按下 键盘的时候， 就会触发后面的这个函数
+       // 通过默认形参e，就可以获取到触发的对象 e.keyCode可以获取每个键盘对应的code码是多少
+        document.addEventListener('keydown',function(e){
+            console.log(e.keyCode);
+        })
+    </script>
+</body>
+</html>

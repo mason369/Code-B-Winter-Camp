@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn1">按钮1</button>
+    <button class="btn2">按钮2</button>
+
+    <script>
+        // 给两个按钮绑定事件
+        // 1. 获取元素
+        // 2. 绑定事件
+        // 3. 每个事件有对应的事件处理函数
+        // 4. 在事件处理函数中，写处理的逻辑代码就可以了
+
+        // 练习：分别用两种不同的绑定方式，给两个button绑定事件
+        // 1. 普通绑定  2. 事件监听
+
+
+        /**
+         * 利用插件化思想来面向过程开发：
+         * 1.写IIFE
+         * 2.在实参中传入document对象，在形参中通过doc接收
+         * 3.获取元素
+         * 4.设置统一的入口函数，方便统一管理所有的执行函数
+         * 5.入口函数中，就要执行所有的绑定事件
+         * 6.定义绑定事件
+         * 7.单独抽离事件处理函数
+        */
+        ;(function(doc){
+
+            var oBtn1 = doc.getElementsByClassName('btn1')[0],
+                oBtn2 = doc.getElementsByClassName('btn2')[0];
+
+            // 一进入页面，则执行init函数 => 入口函数   
+            function init(){
+                // 绑定鼠标事件
+                 bindEvent();
+                 // 绑定键盘事件
+                 bindKeyEvent();
+            };
+
+            // 定义事件绑定函数,所有的事件绑定都统一在这里处理
+            function bindEvent(){
+                oBtn1.addEventListener('click',handleClick1);
+                oBtn2.addEventListener('click',handleClick2);
+            };
+
+            var handleClick1 = function(){};
+
+            var handleClick2 = function(){};
+
+            // 定义键盘事件
+            function bindKeyEvent(){
+                doc.addEventListener('keydown',handleDown)
+            }
+            
+            var handleDown = function(){};
+
+            init()   
+
+        })(document)
+    </script>
+</body>
+</html>

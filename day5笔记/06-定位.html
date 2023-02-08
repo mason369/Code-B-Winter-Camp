@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0;
+        }
+        div {
+            width: 300px;
+            height: 300px;
+        }
+
+        .top {
+            position: relative;
+            margin:0 auto;
+            background-color: orange;
+        }
+
+        .bottom {
+            /* 定位是相对于父级来处理的
+            且该父级一定是具有定位的元素
+            一般：子决父相
+            相对定位会占有位置
+            绝对定位不会占有位置，会浮起来
+            */
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="bottom"></div>
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        pisition有4个方向：top bottom left right
+        */
+        * {
+            margin:0;
+        }
+
+        .father {
+            margin:0 auto;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .son1 {
+            position:absolute;
+            right: -25px;
+            top:75px;
+            width: 50px;
+            height: 50px;
+            background-color:skyblue;
+        }
+
+        .son2 {
+            position:absolute;
+            top:75px;
+            left:-25px;
+            width: 50px;
+            height: 50px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son1"></div>
+        <div class="son2"></div>
+    </div>
+
+    <!-- 练习：准备一个盒子，中间放两个盒子，要求实现在大盒子中间，实现左右两个按钮居中的效果 -->
+</body>
+</html>

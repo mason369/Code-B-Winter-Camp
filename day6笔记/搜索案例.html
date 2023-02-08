@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<input
+			type="text"
+			class="search-input"
+			placeholder="请输入你要搜索的内容"
+		/>
+		<button class="search-btn">搜索</button>
+		<div class="search-result">你搜索的结果为：</div>
+		<script>
+			
+			// 1.  使用插件化思维，完成改写
+			//    要求：结果里面只展示最新一次的搜索结果，不再重复展示上次的搜索结果
+			// 利用插件化思想来面向过程开发：
+			// 1.写IIFE
+			// 2.在实参中传入document对象，在形参中通过doc接收
+			// 3.获取元素
+			// 4.设置统一的入口函数，方便统一管理所有的执行函数
+			// 5.入口函数中，就要执行所有的绑定事件
+			// 6.定义绑定事件
+			// 7.单独抽离事件处理函数
+			
+			// 1.写IIFE
+			(function (doc) {
+				// 3.获取元素
+				var searchInput = doc.getElementsByClassName("search-input")[0];
+				var searchBtn = doc.getElementsByClassName("search-btn")[0];
+				var searchResult = doc.getElementsByClassName("search-result")[0];
+				// 4.设置统一的入口函数，方便统一管理所有的执行函数
+				function init() {
+					// 5.入口函数中，就要执行所有的绑定事件
+					bindEvent();
+				}
+				// 6.定义绑定事件
+				function bindEvent() {
+					searchBtn.onclick = searchBtnClick;
+				}
+				// 7.单独抽离事件处理函数
+				function searchBtnClick() {
+					// 1.获取用户输入的内容
+					var searchValue = searchInput.value;
+					// 2.判断用户输入的内容是否为空,trim()去除字符串两端的空格
+					if (searchValue.trim() === "") {
+						alert("请输入你要搜索的内容");
+						return;
+					}
+					// 3.将用户输入的内容展示到页面上
+					searchResult.innerText = "你搜索的结果为：" + searchValue;
+				}
+				// 4.设置统一的入口函数，方便统一管理所有的执行函数
+				init();
+			})(document);
+
+		</script>
+	</body>
+</html>

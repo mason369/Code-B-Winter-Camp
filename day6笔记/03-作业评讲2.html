@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 1. 插件 => IIFE 构造函数 挂在到window上 使用
+        */
+
+        ;(function(){
+            // 如果外界没有传入options,则options是undefined,
+            // 在undefined身上读取属性会报错，所以给一个空对象为默认值，
+            // 这种在开发中就叫做容错处理
+            var Food = function(options={}){
+                this.height = options.height || 20;
+                this.width = options.width || 20;
+                this.backgroundColor = options.backgroundColor || 'orange';
+                this.position = options.position || 'absolute';
+                this.x = options.top || 50;
+                this.y = options.left || 50;
+            };
+
+            Food.prototype.render = function(){
+                // 动态在内存中创建div标签，仅在内存中，并没有实际添加到页面中
+                var div = document.createElement('div');
+                // 将实例身上从外部获取的属性值作为div的样式进行添加
+                div.style.width = this.width + 'px';
+                div.style.height = this.height + 'px';
+                div.style.backgroundColor = this.backgroundColor;
+                div.style.position = this.position;
+                div.style.left = this.x + 'px';
+                div.style.top = this.y + 'px';
+                // 将内存中的div放到页面中
+                document.body.appendChild(div);
+            };
+
+            window.Food = Food
+        })();
+
+        var food = new Food();
+        // 调用方法，则执行render函数，则创建div，则页面上呈现div
+        food.render()
+    </script>
+</body>
+</html>

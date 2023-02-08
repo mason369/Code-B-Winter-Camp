@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content">this is div</div>
+    <button id="change">修改</button>
+    <script>
+        // 动态创建一个p标签
+        var p = document.createElement('p');
+            
+            p.innerText = 'p标签';
+            // 通过document.body可以将动态创建的元素放到页面中
+            document.body.appendChild(p);
+        /**
+         * 需求：点击按钮，将div的字体颜色改为红色
+         * 1. 获取相关的元素
+        */
+
+        // 1. 获取元素
+       var oContent =  document.getElementById('content'),
+           oButton  =  document.getElementById('change');
+
+       // 2. 点击button，触发一个事件，在这个事件中做逻辑处理
+       // 在 js 中，如果要绑定一个点击事件，就需要用到onclick
+       // dom元素中间的内容部分，是innerText
+       oButton.onclick = function(){
+         // 3. 进行逻辑处理
+          oContent.style.color = 'red';
+          oContent.innerText = '我是一个div'
+          
+       }
+
+
+
+       // 练习：页面上放一个div，初始化宽高都为200，背景颜色为橙色，另外放一个button按钮
+       // 要求：当点击按钮的时候，修改div的宽高为300px，背景颜色为skyblue,同时div中显示文字：我出现了
+    </script>
+</body>
+</html>
