@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div">0</div>
+    <script>
+        // 需求变更：等2秒钟再打印1
+        // 延时器或者叫做定时器: 
+        /**
+         * 特点：只执行一次
+         * setTimeout(function(){
+         *    执行代码 
+         * },延迟的时间 => 毫秒)
+         * 
+         * 
+         * 需求：每隔2秒，就打印1
+         * setInterval(function(){
+         *    执行代码
+         * },延迟的时间 => 毫秒)
+         * 
+         * */ 
+        // setTimeout(() => {
+        //     console.log(1);
+        // }, 3000);
+
+        // setInterval(() => {
+        //     console.log(2);
+        // },2000);
+
+        // 案例：页面上有一个数字 0 ,要求，每一秒自增1
+        var i = 0;
+        var oDiv = document.getElementsByClassName('div')[0];
+        // console.log(oDiv);
+
+        // 需求变更，当数字加到5的时候，停止
+        var timer = setInterval(() => {
+            i++;
+            oDiv.innerText = i;
+            // 第一种if来判断
+            // if(i == 5){
+            //     // 停止计时器
+            //     // clearInterval(定时器的名字)
+            //      clearInterval(timer)
+            // };
+            // 第二种三元
+            // i == 5 ? clearInterval(timer) : ''
+            // 第三种 逻辑中断
+            i == 5 && clearInterval(timer)
+        }, 1000);
+    </script>
+</body>
+</html>

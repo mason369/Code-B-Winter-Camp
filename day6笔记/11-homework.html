@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        /**
-         * 1. 百度搜索案例 使用插件化思维，完成改写
-         *    要求：结果里面只展示最新一次的搜索结果，不再重复展示上次的搜索结果
-         * 
-         * 2. 写一个Test插件，要求外部可以传入自定义配置对象，如果没有传入，则需要进行容错处理
-         *    实例化对象身上有以下属性：
-         *     width , height , backgroundColor,
-         *    有init方法，一旦调用方法，则可以将实例挂在到页面上
-        */
-    </script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			/**
+			 * 写一个Test插件，要求外部可以传入自定义配置对象，如果没有传入，则需要进行容错处理
+			 *    实例化对象身上有以下属性：
+			 *     width , height , backgroundColor,
+			 *    有init方法，一旦调用方法，则可以将实例挂在到页面上
+			 */
+
+			(function () {
+				var Test = function (options = {}) {
+					this.width = options.width || 100;
+					this.height = options.height || 100;
+					this.backgroundColor = options.backgroundColor || "red";
+				};
+				window.Test = Test;
+				Test.prototype.init = function () {
+					var div = document.createElement("div");
+					div.style.width = this.width + "px";
+					div.style.height = this.height + "px";
+					div.style.backgroundColor = this.backgroundColor;
+					document.body.appendChild(div);
+				};
+			})();
+			var test = new Test({
+				width: 200,
+				height: 200,
+				backgroundColor: "blue",
+			});
+			test.init();
+		</script>
+	</body>
 </html>

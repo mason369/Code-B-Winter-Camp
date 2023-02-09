@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt">
+    <button id="btn">搜索</button>
+    <div id="div"></div>
+    <script>
+        // 案例：模糊搜索案例
+        // 1.页面有一个input框，用户可以输入
+        // 2.有一个按钮，名字是搜索
+        // 3.有一个div，用于展示用户搜索结果，div中默认展示 张三、李四、王艺飞
+        // 要求：在输入框中，搜索带有以上名字内容的时候，则div中只展示对应内容
+        // 用插件化思维来写 
+        ;(function(doc){
+
+            // 1. 获取dom => IIFE传入document对象能够简化获取
+            var oInput = doc.getElementById('ipt'),
+                oButton = doc.getElementById('btn'),
+                oDiv = doc. getElementById('div');
+
+            // 此内容用于div的默认展示
+            var content = ['张三','李四','王艺飞'];
+            div.innerText = content;
+
+            // 2. 添加入口函数
+            function init(){
+                bindEvent();
+            };
+
+            // 4. 绑定事件
+            function bindEvent(){
+                oButton.addEventListener('click',getContent);
+            }
+
+            // 5. 准备处理函数
+            function getContent(){
+                 // a. 获取用户的输入内容
+                 var res = oInput.value;
+                 // b. 筛选出content中包含用户输入的内容的结果
+                 div.innerText = content.filter(v=>v.includes(res))
+            }            
+            // 3. 执行init函数
+            init();
+
+
+        })(document)
+    </script>
+</body>
+</html>

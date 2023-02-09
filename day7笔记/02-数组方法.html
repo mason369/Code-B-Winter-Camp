@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 需求：给colors数组中的每一个成员，添加一个"色"
+        var colors = ['red','blue','orange'];
+        // for(var i = 0 ;i < colors.length; i++){
+        //     colors[i] += '色'
+        // }
+        // console.log(colors);
+
+        // 第二种遍历的方法，也是公司项目中用的最多的一种方法
+        /**
+         * item形参就是参与遍历的每一个成员
+         * forEach(function(item){
+         *    
+         * })
+         * 
+        */
+        // colors.forEach(function(item){
+        //      item += '色' ;
+        //      console.log(item);
+        // })
+
+        // // 企业中更青睐结合箭头函数的这种写法
+        // colors.forEach((item)=>{
+        //     item += '色'
+        // })
+
+        // 需求：判断arr中是否包含3
+        // 使用数组名.includes(需要判断是否存在的值)方法就可以了
+        // 结果返回布尔值类型
+        var arr = [1, 2, 3, 4, 5];
+        console.log(arr.includes(3)); // true
+
+
+        // 需求：将arr中，大于3的数筛选出来，并给到一个新的数组
+        // filter方法 => 重点内容！！！！！！！！！！！！！！！
+        // filter()可以筛选满足条件的内容，并且返回出去
+        // filter方法接收一个函数作为参数，函数中的形参就是参与筛选的每一个成员
+        // 一定要记住！最终的结果一定得使用return返回出去！
+        // 且返回结果是一个数组！
+
+        var result = arr.filter((item)=>{
+            return  item > 3
+        });
+        console.log(result);
+
+        // 练习：要求筛选出所有checked属性为真的对象并输出
+        var info = [
+            {
+                id:1,
+                checked:true
+            },
+            {
+                id:2,
+                checked:false
+            },
+            {
+                id:3,
+                checked:true
+            },
+            {
+                id:4,
+                checked:false
+            },
+        ];
+
+        var res = info.filter(v =>v.checked);
+        console.log(res);
+
+        // 需求：筛选出colors数组中，所有包含'e'的元素并输出
+        var colors = ['red','blue','green','yellow','orange','black'];
+        var colorsResult = colors.filter(v => v.includes('e'));
+        console.log(colorsResult);
+
+        
+
+
+    </script>
+</body>
+</html>
