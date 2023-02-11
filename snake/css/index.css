@@ -1,0 +1,24 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+#map{
+    position: relative;
+    width: 700px;
+    height: 700px;
+    background-color: #ccc;
+    margin: 20px auto;
+}
+#restart{
+    position: absolute;
+    top: 0;
+    left: 280px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #4ead34;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
